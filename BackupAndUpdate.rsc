@@ -148,9 +148,9 @@ if ([:len [/system identity get name]] = 0 or [/system identity get name] = "Mik
 
     ## Make system backup
     :if ([:len $backupPassword] = 0) do={
-        /system backup save dont-encrypt=yes name=$backupName;
+        /system backup save dont-encrypt=yes name=\"$backupName\";
     } else={
-        /system backup save password=$backupPassword name=$backupName;
+        /system backup save password=$backupPassword name=\"$backupName\";
     }
     :log info ("$SMP System backup created. $backupFileSys");
 
